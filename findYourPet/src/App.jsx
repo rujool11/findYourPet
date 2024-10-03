@@ -15,6 +15,7 @@ function App() {
       <Box 
       display="flex" 
       justifyContent="space-between"
+      alignItems="center"
       >
         <MapEmbed />
         <InfoSection />
