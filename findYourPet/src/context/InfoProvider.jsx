@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getRandomLatLong, getRandomSpeed } from "../utils/ValueGetter";
+import { getLatLong, getSpeed } from "../utils/ValueGetter";
 const InfoContext = createContext();
 
 const BASE_LATITUDE = 12.934968;
@@ -13,9 +13,9 @@ const InfoProvider = ({ children }) => {
     useEffect(() =>{
 
       const interval = setInterval(() => {
-        setSpeed(getRandomSpeed());
-        setLatitude(getRandomLatLong(BASE_LATITUDE));
-        setLongitude(getRandomLatLong(BASE_LONGITUDE));
+        setSpeed(getSpeed());
+        setLatitude(getLatLong(BASE_LATITUDE));
+        setLongitude(getLatLong(BASE_LONGITUDE));
       }, 3000);
 
       return () => clearInterval(interval); // good practice cleanup
